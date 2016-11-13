@@ -1,0 +1,6 @@
+---
+# file: azure-starter.yml
+- hosts: all
+  become: yes
+  roles:
+  - azure-cli
