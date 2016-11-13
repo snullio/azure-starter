@@ -1,0 +1,9 @@
+---
+# file: roles/utils/tasks/main.yml
+- name: Install utils
+  apt: name={{ item }} state=present
+  with_items:
+    - git
+    - jq
+    - curl
+    - tmux
