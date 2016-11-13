@@ -1,4 +1,4 @@
 ---
-# file: roles/azure/tasks/main.yml
+# file: roles/azure-cli/tasks/main.yml
 - name: Install "azure-cli" node.js package globally.
   npm: name=azure-cli global=yes state=latest
