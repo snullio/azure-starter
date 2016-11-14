@@ -3,6 +3,8 @@
 - hosts: all
   become: yes
   roles:
+    - timezone
     - utils
+    - pip
     - nodejs
     - azure-cli
