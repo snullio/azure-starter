@@ -2,3 +2,6 @@
 # file: roles/pip/tasks/main.yml
 - name: Install python-pip
   apt: name=python-pip state=present
+
+- name: Upgrade python-pip
+  pip: name=pip state=latest

@@ -1,0 +1,9 @@
+---
+# file: roles/ansible/tasks/main.yml
+- name: Install python package.
+  pip: name={{ item }} state=present
+  with_items:
+    - pywinrm
+    - azure
+    - docker-py
+    - docker-compose

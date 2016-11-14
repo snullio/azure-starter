@@ -6,5 +6,6 @@
     - timezone
     - utils
     - pip
+    - ansible
     - nodejs
     - azure-cli
