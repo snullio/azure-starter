@@ -2,9 +2,11 @@
 # file: roles/nodejs/tasks/main.yml
 - name: Download setup shell for node.js v7
   get_url: url="https://deb.nodesource.com/setup_7.x" dest="/tmp/setup_node.sh"
+  register: setup_node_sh
 
 - name: Setup node.js
   shell: sh /tmp/setup_node.sh
+  when: setup_node_sh.changed
 
 - name: Install node.js
   apt: name=nodejs state=latest
