@@ -6,4 +6,6 @@
     - git
     - jq
     - curl
+    - wget
     - tmux
+    - unzip
