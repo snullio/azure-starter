@@ -1,2 +1,2 @@
 [azure-starter]
-localhost
+localhost ansible_connection=local
