@@ -1,0 +1,4 @@
+---
+# file: roles/mosh/tasks/main.yml
+- name: Install Mosh
+  apt: name=mosh state=present
