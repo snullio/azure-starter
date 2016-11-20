@@ -100,7 +100,6 @@
         },
         "storageAccount": {
             "name": "[uniquestring(concat(subscription().subscriptionId, resourceGroup().id))]",
-            "accessTier": "Hot",
             "sku": "[parameters('storageSku')]",
             "kind": "Storage"
         }
@@ -137,12 +136,7 @@
             "name": "[variables('storageAccount').name]",
             "apiVersion": "2016-01-01",
             "location": "[resourceGroup().location]",
-            "tags": {
-                "displayName": "StorageAccount1"
-            },
-            "properties": {
-                "accessTier": "[variables('storageAccount').accessTier]"
-            },
+            "properties": {},
             "sku": {
                 "name": "[variables('storageAccount').sku]"
             },
