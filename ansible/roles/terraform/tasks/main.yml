@@ -1,0 +1,14 @@
+---
+# file: roles/terraform/tasks/main.yml
+- name: download terraform
+  get_url:
+    url: https://releases.hashicorp.com/terraform/0.7.13/terraform_0.7.13_linux_amd64.zip
+    dest: /tmp/terraform_0.7.13_linux_amd64.zip
+  register: download_terraform
+
+- name: install terraform
+  unarchive:
+    src: /tmp/terraform_0.7.13_linux_amd64.zip
+    dest: /usr/local/bin
+    remote_src: yes
+  when: download_terraform.changed

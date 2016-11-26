@@ -1,0 +1,14 @@
+---
+# file: roles/packer/tasks/main.yml
+- name: download packer
+  get_url:
+    url: https://releases.hashicorp.com/packer/0.10.1/packer_0.10.1_linux_amd64.zip
+    dest: /tmp/packer_0.10.1_linux_amd64.zip
+  register: download_packer
+
+- name: install packer
+  unarchive:
+    src: /tmp/packer_0.10.1_linux_amd64.zip
+    dest: /usr/local/bin
+    remote_src: yes
+  when: download_packer.changed
