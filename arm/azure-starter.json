@@ -191,5 +191,10 @@
             }
         }
     ],
-    "outputs": {}
+    "outputs": {
+        "fqdn": {
+            "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','azs-pip-1'), '2015-06-15').dnsSettings.fqdn]",
+            "type": "string"
+        }
+    }
 }
