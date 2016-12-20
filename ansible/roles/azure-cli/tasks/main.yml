@@ -2,3 +2,14 @@
 # file: roles/azure-cli/tasks/main.yml
 - name: Install "azure-cli" node.js package globally.
   npm: name=azure-cli global=yes state=latest
+
+# Microsoft Azure CLI 2.0 - Preview
+- name: Linux Install Prerequisites - Ubuntu 16.04 LTS
+  apt: name={{ item }} state=present
+  with_items:
+    - libssl-dev
+    - libffi-dev
+    - python-dev
+    - build-essential
+- name: Install (azure-cli) python package.
+  pip: name=azure-cli
