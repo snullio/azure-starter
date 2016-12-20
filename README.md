@@ -4,8 +4,8 @@ resourcegroup=azs-rg
 appName=azs-app
 
 cd arm
-azure group create -f storage.json -e storage.parameters.json azs-rg japanwes
-azure group deployment list azs-rg
+azure group create -f storage.json -e storage.parameters.json $resourcegroup japanwes
+azure group deployment list $resourcegroup
 
 storageaccount=$(azure storage account list -g $resourcegroup --json | jq -r '.[0].name')
 keyvault=$(azure keyvault list $resourcegroup --json | jq -r '.[0].name')
