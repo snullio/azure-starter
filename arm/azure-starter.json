@@ -34,7 +34,7 @@
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/publicIPAddresses",
-            "name": "azs-pip-1",
+            "name": "azs-1-pip",
             "location": "[resourceGroup().location]",
             "properties": {
                 "publicIPAllocationMethod": "Dynamic",
@@ -117,7 +117,7 @@
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/networkInterfaces",
-            "name": "azs-nic-1",
+            "name": "azs-1-nic",
             "location": "[resourceGroup().location]",
             "dependsOn": [
                 "Microsoft.Network/publicIPAddresses/azs-pip-1",
@@ -143,7 +143,7 @@
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Compute/virtualMachines",
-            "name": "azs-vm-1",
+            "name": "azs-1",
             "location": "[resourceGroup().location]",
             "dependsOn": [
                 "Microsoft.Network/networkInterfaces/azs-nic-1"
