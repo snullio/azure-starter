@@ -9,3 +9,4 @@
     - wget
     - tmux
     - unzip
+    - pwgen
